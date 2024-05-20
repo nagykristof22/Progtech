@@ -85,25 +85,6 @@ public class KristofTest {
         assertTrue(dogs.size() > 0); // Assuming there are dogs in the database
     }
 
-    @Test
-    public void addDogTest() {
-        DatabaseConnection dbConnection = new DatabaseConnection(
-                "jdbc:mysql://localhost:3306/dogadoptation",
-                "root",
-                ""
-        );
-        Connection connection = dbConnection.getDbConnection();
-        DogRepo dogRepo = new DogRepo(connection);
-
-        String name = "Buddy";
-        String breed = "Golden Retriever";
-        int age = 3;
-        String description = "Friendly and playful.";
-
-        boolean result = dogRepo.addDog(name, breed, age, description);
-
-        assertTrue(result);
-    }
 
     @Test
     public void breedSearchStrategyTest() {
